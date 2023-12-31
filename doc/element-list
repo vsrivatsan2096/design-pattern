@@ -1,0 +1,12 @@
+common.helper.cloud
+common.helper.creational
+common.helper.customer
+common.helper.entity
+common.helper.exceptions
+common.helper.file
+common.helper.image
+common.helper.message
+common.helper.transformers
+common.helper.unit
+design.pattern.creational
+design.pattern.structural
