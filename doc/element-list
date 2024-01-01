@@ -5,8 +5,10 @@ common.helper.entity
 common.helper.exceptions
 common.helper.file
 common.helper.image
+common.helper.leave
 common.helper.message
 common.helper.transformers
 common.helper.unit
+design.pattern.behavioural
 design.pattern.creational
 design.pattern.structural
