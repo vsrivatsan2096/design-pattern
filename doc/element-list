@@ -10,6 +10,7 @@ common.helper.image
 common.helper.leave
 common.helper.message
 common.helper.transformers
+common.helper.ui
 common.helper.unit
 design.pattern.behavioural
 design.pattern.creational

@@ -1,4 +1,4 @@
-package common.helper;
+package common.helper.ui;
 
 public abstract class UIElement {
     private final String name;

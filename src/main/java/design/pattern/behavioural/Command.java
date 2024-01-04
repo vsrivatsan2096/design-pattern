@@ -13,6 +13,8 @@ import common.helper.cloud.Storage.Size;
  * */
 public interface Command {
     void execute();
+
+    void undo();
 }
 
 class AWSResourceBL {
@@ -45,6 +47,11 @@ class CreateAWSResource implements Command {
     public void execute() {
         Instance instance = awsResourceBL.createInstance(instanceCapacity);
         awsResourceBL.attachStorage(instance, storageSize);
+    }
+
+    @Override
+    public void undo() {
+        throw new UnsupportedOperationException();
     }
 
     public static void main(String[] args) {

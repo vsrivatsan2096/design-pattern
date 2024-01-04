@@ -1,6 +1,6 @@
 package design.pattern.behavioural;
 
-import common.helper.UIElement;
+import common.helper.ui.UIElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,11 @@ import java.util.List;
  * {@link Mediator} is used to decouple the communication between the objects and
  *              let mediator object to handle the communication between group of objects
  * */
-public interface Mediator {}
+public interface Mediator<U> {
+    void valueChanged(U element);
+}
 
-class UIElementMediator implements Mediator {
+class UIElementMediator implements Mediator<UIElement> {
     private final List<UIElement> registeredUIElements = new ArrayList<>();
     public void valueChanged(UIElement element) {
         registeredUIElements.stream().filter(e-> !e.equals(element)).forEach(e -> e.valueChanged(element));

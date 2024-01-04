@@ -8,7 +8,9 @@ import java.util.StringTokenizer;
 /**
  * {@link Interpreter} is used when it is needed to process a simple language with rules or grammar
  * */
-public interface Interpreter {}
+public interface Interpreter<C> {
+    boolean interpret(C context);
+}
 
 class ExpressionParser {
     public Expression parseExpression(String expression) {
@@ -79,8 +81,7 @@ class ExpressionParser {
     }
 }
 
-abstract class Expression implements Interpreter {
-    abstract boolean interpret(UserContext userContext);
+abstract class Expression implements Interpreter<UserContext> {
     public static void main(String[] args) {
         UserContext userContext1 = new UserContext("Srivatsan", "ADMIN", "USER");
         UserContext userContext2 = new UserContext("Sam", "USER");
