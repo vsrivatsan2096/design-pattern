@@ -1,4 +1,3 @@
-common.helper
 common.helper.cloud
 common.helper.context
 common.helper.creational
@@ -9,9 +8,11 @@ common.helper.file
 common.helper.image
 common.helper.leave
 common.helper.message
+common.helper.order
 common.helper.transformers
 common.helper.ui
 common.helper.unit
+common.helper.workflow
 design.pattern.behavioural
 design.pattern.creational
 design.pattern.structural

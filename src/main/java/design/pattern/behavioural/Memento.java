@@ -1,6 +1,6 @@
 package design.pattern.behavioural;
 
-import common.helper.Workflow;
+import common.helper.workflow.Workflow;
 
 import java.util.List;
 
