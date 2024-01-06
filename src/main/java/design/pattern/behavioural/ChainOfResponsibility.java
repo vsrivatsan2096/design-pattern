@@ -49,7 +49,7 @@ abstract class Employee implements LeaveApprover {
     public static void main(String[] args) {
         LeaveApplication leaveApplication = LeaveApplication.getBuilder()
                 .withEmployeeName("Srivatsan")
-                .withEmployeeId("10136")
+                .withEmployeeId("10112")
                 .leaveStartsOn(LocalDate.now())
                 .leaveEndsOn(LocalDate.of(2024, 1, 5))
                 .withLeaveType(LeaveApplication.Type.PRIVILEGED)
