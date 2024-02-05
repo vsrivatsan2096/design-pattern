@@ -1,3 +1,4 @@
+common.helper.calculator
 common.helper.cloud
 common.helper.context
 common.helper.creational
@@ -10,6 +11,7 @@ common.helper.leave
 common.helper.message
 common.helper.order
 common.helper.storage
+common.helper.streaming
 common.helper.transformers
 common.helper.ui
 common.helper.unit

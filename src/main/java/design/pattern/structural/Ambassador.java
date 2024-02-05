@@ -1,59 +1,15 @@
 package design.pattern.structural;
 
+import common.helper.calculator.Calculator;
+import common.helper.calculator.ServerCalculator;
+
 import java.io.PrintStream;
-import java.util.Arrays;
-import java.util.Random;
 
 /**
  * {@link Ambassador} is used to offload the common functionality like logging, retry, etc., away from the
  *          shared legacy application into the client code itself.
  * */
 public interface Ambassador {}
-
-interface Calculator {
-    public long sum(long ...a);
-
-    public long product(long ...a);
-}
-
-// Server
-class ServerCalculator implements Calculator {
-    private static final ServerCalculator serverCalculator = new ServerCalculator();
-
-    private final Random random = new Random();
-
-    private ServerCalculator() { /* Singleton */ }
-
-    public static ServerCalculator getInstance() {
-        return serverCalculator;
-    }
-
-    @Override
-    public long sum(long... a) {
-        pause();
-
-        return Arrays.stream(a).sum();
-    }
-
-    @Override
-    public long product(long... a) {
-        pause();
-
-        return Arrays.stream(a).reduce(1, (b, c) -> b * c);
-    }
-
-    private void pause() {
-        try {
-            if (random.nextInt(0,2) == 0) {
-                throw new RuntimeException("Remote server busy, try again in sometime");
-            }
-
-            Thread.sleep(random.nextLong(1000, 3000));
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-}
 
 // Client
 class ClientAmbassador implements Calculator, Ambassador {
